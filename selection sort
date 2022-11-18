@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+void selection_sort(int arr[], int size){
+   
+for (int  i=0 ;i<(size-1) ;i++){
+    int indexmin=i;
+    for (int j=i;j<=(size-1);j++){
+        if(arr[indexmin]>arr[j]){
+          indexmin=j;
+        }
+        swap(arr[i],arr[indexmin]);
+    }
+     
+
+}
+
+
+}
+int main() {
+   int arpan[7]={ 3,4,5,7,8,9,1};
+   selection_sort(arpan, 7);
+   for(int i=0; i<7;i++){
+       cout<<arpan[i]<< " " ;
+   }
+
+    return 0;
+}
