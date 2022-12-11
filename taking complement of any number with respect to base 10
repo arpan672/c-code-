@@ -1,3 +1,5 @@
+// this is my approach to do task
+
 #include <iostream>
 #include<math.h>
 using namespace std;
@@ -41,3 +43,7 @@ int main() {
 
     return 0;
 }
+
+
+
+// this is important approach 
