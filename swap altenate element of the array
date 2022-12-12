@@ -1,0 +1,19 @@
+
+
+void swap_alternate(int arr[] ,int n){
+     int i=0;
+     while(i<(n-1)){
+         swap(arr[i] , arr[i+1]);
+         i+=2;
+     }
+ }
+ // if swap function will not work properly then 
+ void swap_alternate(int arr[] ,int n){
+     int i=0;
+     while(i<(n-1)){
+        int copy=arr[i];
+        arr[i]=arr[i+1];
+        arr[i+1]=copy;
+         i+=2;
+     }
+ }
