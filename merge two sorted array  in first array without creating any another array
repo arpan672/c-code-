@@ -1,0 +1,30 @@
+// merge two sorted array  in first array without creating any another array
+ void  merge(int first[], int m, int second[] , int n){
+     while(m>0 && n>0)
+     {
+         if(first[m-1]>second[n-1]){
+             first[m-1+n]=first[m-1];
+             m--;
+         }
+         else  
+         {
+             first[m-1+n]=second[n-1];
+             n--;
+         } 
+     }
+     while(n>0){
+         first[m+n-1] =second[n-1];
+         n--;
+     }
+ }
+
+int main() {
+    // Write C++ code here
+ int arr1[11]={0 ,11, 32, 54, 62, 84 };
+ int arr2[5]={4 ,9, 12, 14, 18};
+ merge(arr1,6,arr2,5);
+ for(int i=0; i<11 ;i++){
+     cout<< arr1[i]<< " ";
+ }
+     return 0;
+}
