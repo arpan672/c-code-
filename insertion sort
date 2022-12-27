@@ -1,0 +1,28 @@
+ void insertion_sort(int arr[] , int l){
+     int i=1;
+     //cout<<" mai fuction me pahuch gaya hu";
+     while(i<=l){
+         int pocket=arr[i];// compare karne waale element ko udd liya 
+         int j=i-1;
+         while(j>=0){// tab tak karte jao jab tak starting point me nahi pahuch jaate
+             if(arr[j]>pocket){
+                 arr[j+1]=arr[j];//shift element
+                 j--;
+             }
+             else  break ;//position milne ke baad bahar aa jao and element ko bahar rakh do
+         }
+         arr[j+1]=pocket;
+         i++;
+     }
+     
+ }
+
+int main() {
+    // Write C++ code here
+ int arr[6]={11,54,0,32,84,62};
+ insertion_sort(arr, 6);
+ for(int i=0; i<6 ;i++){
+     cout<< arr[i]<< " ";
+ }
+     return 0;
+}
