@@ -1,0 +1,34 @@
+ #include <iostream>
+using namespace std ;
+/* this is the wrong logic please analysis
+void binary_sort(int arr[] , int n){
+     for(int i=0; i<n;i++){
+         for(int j=i+1; j<(n-1); j++){
+             if(arr[j] >arr[j+1]){
+                 swap( arr[j+1] , arr[j]);
+             }
+         }
+     }
+ }*/
+// this is the right code to do anything
+void binary_sort(int arr[] , int n){
+     for(int i=0; i<n;i++){
+         for(int j=0; j<(n-1-i); j++){
+             if(arr[j] >arr[j+1]){
+                 swap( arr[j+1] , arr[j]);
+             }
+         }
+     }
+ }
+
+int main() {
+    // Write C++ code here
+ int arr[4]={7,1,6,9};
+ binary_sort(arr, 4);
+ for(int i=0; i<4 ;i++){
+     cout<< arr[i]<< " ";
+ }
+ 
+
+    return 0;
+}
