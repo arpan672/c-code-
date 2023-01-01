@@ -18,3 +18,15 @@
      }*/
      return 0;
  }
+
+
+//using with only one pointer 
+#include <iostream>
+ using namespace std;
+   void reverse(  string& arr, int s, int len){
+       if(s>len/2){
+           return ;
+       }
+       swap(arr[s], arr[len-s]);
+       reverse(arr, ++s, len);
+   }
