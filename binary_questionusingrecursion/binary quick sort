@@ -1,0 +1,51 @@
+// not fully completed now need to modification
+
+#include <iostream>
+ using namespace  std;
+ 
+ int partision (int  arr[] , int s, int e){
+      int cnt=0;
+     for (int i=1; i<e; i++){
+         if (arr[0]>=arr[i]){
+             cnt++;
+         }
+     }
+     int pivotindex=s+cnt;
+     swap(arr[0], arr[pivotindex]);
+     int i=s, j=e;
+     while( i<=pivotindex && j<=pivotindex){
+         while(arr[i]<arr[pivotindex]){
+             i++;
+         }
+          while(arr[j]>arr[cnt]){
+             j--;
+         }
+         if(i<=pivotindex && j<=pivotindex){
+             swap(arr[i] , arr[j]);
+         }
+         
+     }
+      return  pivotindex;
+ }
+ void quick_sort(int arr[], int s , int e ){
+     if(s <= e){
+         return ;
+     }
+     //partision the array
+    int cnt = partision( arr, s,  e);
+    // sorting the left part of the array
+    quick_sort( arr,  s,  cnt-1);
+    // sorting the right part of the array
+    quick_sort( arr,  cnt+1,  e);
+     
+ }
+int main() {
+   int arpan [10]={3,7,9,1,77,99,22,45,76,20};
+   quick_sort( arpan ,  0 , 9);
+   for (int i=0 ; i<10; i++ ){
+       cout<< arpan[i]<< " ";
+   }
+   cout<< endl;
+
+    return 0;
+}
