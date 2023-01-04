@@ -1,0 +1,32 @@
+class Solution {
+public:
+    int fib(int n) {
+    // this is the base case 
+         if(n==0){
+             return 0;
+         }
+         if(n==1){
+             return 1;
+         }
+         //  recursively calling the fib function
+         return fib(n-1)+fib(n-2);
+
+    }
+};
+
+
+// using for loop  
+ int fib(int n) {
+     // boundary condition 
+        if (n==0)
+           return 0;
+           
+           // giving the value to value is very important 
+        int firstterm=0, secondterm=1 , thirdterm=1;
+        for (int i=2;  i<=n; i++){
+            thirdterm=secondterm+firstterm;
+            firstterm=secondterm;
+            secondterm=thirdterm;
+        }
+       return thirdterm;
+    }
