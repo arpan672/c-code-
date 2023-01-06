@@ -1,0 +1,12 @@
+bool issorted(int *arr, int len){
+     // base case 
+     if(len==0|| len==1){
+         return true;
+     }
+     // checking every element 
+     if(arr[0]> arr[1]){
+         return false;
+     }
+    // recursively calling to the function
+     return issorted(arr+1, len-1);
+ }
