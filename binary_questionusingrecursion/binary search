@@ -27,3 +27,22 @@ int main() {
    }
     return 0;
 }
+
+
+// another way of making function for binary search
+  bool binary_search(int *arr, int s , int e , int key){
+    int mid=s+(e-s)/2;
+    if(s>e){
+        return 0;
+    }
+    if(arr[mid]== key){
+        return 1;
+    }
+     if(arr[mid]> key){
+        e=mid-1;
+    }
+     if(arr[mid]<key){
+        s=mid+1;
+    }
+ return  binary_search(arr, s, e, key);
+}
